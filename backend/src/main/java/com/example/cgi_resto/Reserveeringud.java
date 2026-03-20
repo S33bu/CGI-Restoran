@@ -26,8 +26,8 @@ public class Reserveeringud {
 
 
         // Laudade reserveeringud genereeritud GPT-4.1 abil. 
-        // Samuti "hardcoded" reserveeringud, et kergemini testida, kas laud on vaba või mitte, teades nende reserveeringute aegu.
-        
+        // Samuti "hardcoded" reserveeringud, mille tõttu saab kergemini testida, kas laud on vaba või mitte, sest teame nende reserveeringute aegu.
+
         // Laud 1
         laud1.lisaReserveering(java.time.LocalDateTime.of(2026, 3, 1, 18, 0));
         laud1.lisaReserveering(java.time.LocalDateTime.of(2026, 3, 3, 19, 0));
