@@ -10,12 +10,13 @@
           <DatePicker v-model="valitudKell" showIcon iconDisplay="input" timeOnly/>
        </div>
        <div>Soovitatud lauad: {{ vabadLauad }}</div>
+       <Button @click="teeReserveering(valitudLaud, valitudKuupäev, valitudKell)" :disabled="!valitudLaud">Broneeri Laud</Button>
     </div>
     
 
     <!-- RUUMI SVG GENEREERITUD AI ABIL (funktsioonid ja värvide vahetamine käsitsi tehtud) -->
     <div class="div2">
-    <svg width="75%" viewBox="0 0 680 820" xmlns="http://www.w3.org/2000/svg">
+    <svg width="75%" viewBox="0 0 680 820">
       <defs>
         <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
           <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -41,14 +42,12 @@
 
       <!-- T1:  -->
       <g @click="vajutaLauale(1)" style="cursor: pointer;">
-        <rect x="83"  y="78" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#888" stroke-width="0.8"/>
-        <rect x="119" y="78" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#888" stroke-width="0.8"/>
-        <rect x="75" y="90" width="80" height="55" rx="8" fill="#f5f5f4" stroke="#3B8BD4" stroke-width="1.5"/>
+        <rect x="100" y="78" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#888" stroke-width="0.8"/>
+        <rect x="75" y="90" width="80" height="55" rx="8" :fill="lauaVärv(1)" stroke="#3B8BD4" stroke-width="1.5"/>
         <text font-family="sans-serif" font-size="14" font-weight="500" x="115" y="120" text-anchor="middle" dominant-baseline="central" fill="#1a1a1a">T1</text>
         <text font-family="sans-serif" font-size="12" x="115" y="134" text-anchor="middle" fill="#666">2 kohta</text>
         <!-- bottom chairs -->
-        <rect x="83"  y="144" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#888" stroke-width="0.8"/>
-        <rect x="119" y="144" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#888" stroke-width="0.8"/>
+        <rect x="100"  y="144" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#888" stroke-width="0.8"/>
         <!-- window badge -->
         <rect x="77" y="159" width="76" height="14" rx="4" fill="#dbeafe" stroke="#3B8BD4" stroke-width="0.8"/>
         <text font-family="sans-serif" font-size="11" x="115" y="169" text-anchor="middle" fill="#185FA5">akna lähedal</text>
@@ -57,13 +56,11 @@
 
       <!-- T2:  -->
        <g @click="vajutaLauale(2)" style="cursor: pointer;"> 
-      <rect x="223" y="78" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#888" stroke-width="0.8"/>
-      <rect x="259" y="78" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#888" stroke-width="0.8"/>
-      <rect x="215" y="90" width="80" height="55" rx="8" fill="#f5f5f4" stroke="#3B8BD4" stroke-width="1.5"/>
+      <rect x="242" y="78" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#888" stroke-width="0.8"/>
+      <rect x="215" y="90" width="80" height="55" rx="8" :fill="lauaVärv(2)" stroke="#3B8BD4" stroke-width="1.5"/>
       <text font-family="sans-serif" font-size="14" font-weight="500" x="255" y="120" text-anchor="middle" dominant-baseline="central" fill="#1a1a1a">T2</text>
       <text font-family="sans-serif" font-size="12" x="255" y="134" text-anchor="middle" fill="#666">2 kohta</text>
-      <rect x="223" y="144" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#888" stroke-width="0.8"/>
-      <rect x="259" y="144" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#888" stroke-width="0.8"/>
+      <rect x="242" y="144" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#888" stroke-width="0.8"/>
       <rect x="217" y="159" width="76" height="14" rx="4" fill="#dbeafe" stroke="#3B8BD4" stroke-width="0.8"/>
       <text font-family="sans-serif" font-size="11" x="255" y="169" text-anchor="middle" fill="#185FA5">akna lähedal</text>
         </g>
@@ -73,7 +70,7 @@
        <g @click="vajutaLauale(3)" style="cursor: pointer;"> 
       <rect x="421" y="210" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
       <rect x="457" y="210" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
-      <rect x="412" y="222" width="80" height="55" rx="8" fill="#f5f5f4" stroke="#aaa" stroke-width="1"/>
+      <rect x="412" y="222" width="80" height="55" rx="8" :fill="lauaVärv(3)" stroke="#aaa" stroke-width="1"/>
       <text font-family="sans-serif" font-size="14" font-weight="500" x="452" y="247" text-anchor="middle" dominant-baseline="central" fill="#1a1a1a">T3</text>
       <text font-family="sans-serif" font-size="12" x="452" y="260" text-anchor="middle" fill="#666">2 kohta</text>
       <rect x="421" y="276" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
@@ -85,7 +82,7 @@
       <g @click="vajutaLauale(4)" style="cursor: pointer;"> 
       <rect x="73"  y="230" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
       <rect x="109" y="230" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
-      <rect x="60" y="242" width="90" height="70" rx="8" fill="#f5f5f4" stroke="#aaa" stroke-width="1"/>
+      <rect x="60" y="242" width="90" height="70" rx="8" :fill="lauaVärv(4)" stroke="#aaa" stroke-width="1"/>
       <text font-family="sans-serif" font-size="14" font-weight="500" x="105" y="274" text-anchor="middle" dominant-baseline="central" fill="#1a1a1a">T4</text>
       <text font-family="sans-serif" font-size="12" x="105" y="288" text-anchor="middle" fill="#666">4 kohta</text>
       <rect x="73"  y="311" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
@@ -97,7 +94,7 @@
        <g @click="vajutaLauale(5)" style="cursor: pointer;"> 
       <rect x="228" y="230" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
       <rect x="264" y="230" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
-      <rect x="215" y="242" width="90" height="70" rx="8" fill="#f5f5f4" stroke="#aaa" stroke-width="1"/>
+      <rect x="215" y="242" width="90" height="70" rx="8" :fill="lauaVärv(5)" stroke="#aaa" stroke-width="1"/>
       <text font-family="sans-serif" font-size="14" font-weight="500" x="260" y="274" text-anchor="middle" dominant-baseline="central" fill="#1a1a1a">T5</text>
       <text font-family="sans-serif" font-size="12" x="260" y="288" text-anchor="middle" fill="#666">4 kohta</text>
       <rect x="228" y="311" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
@@ -108,7 +105,7 @@
        <g @click="vajutaLauale(6)" style="cursor: pointer;"> 
       <rect x="408" y="410" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
       <rect x="444" y="410" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
-      <rect x="395" y="422" width="90" height="70" rx="8" fill="#f5f5f4" stroke="#aaa" stroke-width="1"/>
+      <rect x="395" y="422" width="90" height="70" rx="8" :fill="lauaVärv(6)" stroke="#aaa" stroke-width="1"/>
       <text font-family="sans-serif" font-size="14" font-weight="500" x="440" y="454" text-anchor="middle" dominant-baseline="central" fill="#1a1a1a">T6</text>
       <text font-family="sans-serif" font-size="12" x="440" y="468" text-anchor="middle" fill="#666">4 kohta</text>
       <rect x="408" y="491" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
@@ -122,7 +119,7 @@
       <rect x="70"  y="408" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
       <rect x="106" y="408" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
       <rect x="142" y="408" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
-      <rect x="55" y="420" width="130" height="75" rx="8" fill="#f5f5f4" stroke="#aaa" stroke-width="1"/>
+      <rect x="55" y="420" width="130" height="75" rx="8" :fill="lauaVärv(7)" stroke="#aaa" stroke-width="1"/>
       <text font-family="sans-serif" font-size="14" font-weight="500" x="120" y="454" text-anchor="middle" dominant-baseline="central" fill="#1a1a1a">T7</text>
       <text font-family="sans-serif" font-size="12" x="120" y="468" text-anchor="middle" fill="#666">6 kohta</text>
       <rect x="70"  y="494" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
@@ -134,7 +131,7 @@
       <rect x="260" y="408" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
       <rect x="296" y="408" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
       <rect x="332" y="408" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
-      <rect x="245" y="420" width="130" height="75" rx="8" fill="#f5f5f4" stroke="#aaa" stroke-width="1"/>
+      <rect x="245" y="420" width="130" height="75" rx="8" :fill="lauaVärv(8)" stroke="#aaa" stroke-width="1"/>
       <text font-family="sans-serif" font-size="14" font-weight="500" x="310" y="454" text-anchor="middle" dominant-baseline="central" fill="#1a1a1a">T8</text>
       <text font-family="sans-serif" font-size="12" x="310" y="468" text-anchor="middle" fill="#666">6 kohta</text>
       <rect x="260" y="494" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
@@ -147,7 +144,7 @@
       <rect x="465" y="588" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
       <rect x="501" y="588" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
       <rect x="537" y="588" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
-      <rect x="450" y="600" width="130" height="75" rx="8" fill="#f5f5f4" stroke="#aaa" stroke-width="1"/>
+      <rect x="450" y="600" width="130" height="75" rx="8" :fill="lauaVärv(9)" stroke="#aaa" stroke-width="1"/>
       <text font-family="sans-serif" font-size="14" font-weight="500" x="515" y="634" text-anchor="middle" dominant-baseline="central" fill="#1a1a1a">T9</text>
       <text font-family="sans-serif" font-size="12" x="515" y="648" text-anchor="middle" fill="#666">6 kohta</text>
       <rect x="465" y="674" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
@@ -161,7 +158,7 @@
       <rect x="113" y="600" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
       <rect x="149" y="600" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
       <rect x="185" y="600" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
-      <rect x="55" y="612" width="180" height="80" rx="8" fill="#f5f5f4" stroke="#534AB7" stroke-width="1.5"/>
+      <rect x="55" y="612" width="180" height="80" rx="8" :fill="lauaVärv(10)" stroke="#534AB7" stroke-width="1.5"/>
       <text font-family="sans-serif" font-size="14" font-weight="500" x="145" y="648" text-anchor="middle" dominant-baseline="central" fill="#1a1a1a">T10</text>
       <text font-family="sans-serif" font-size="12" x="145" y="662" text-anchor="middle" fill="#666">8 kohta</text>
       <rect x="77"  y="691" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
@@ -194,6 +191,7 @@
   import { ref, onMounted, computed } from 'vue';
   import DatePicker from 'primevue/datepicker'
   import InputNumber from 'primevue/inputnumber';
+  import Button from 'primevue/button';
 
   const date = ref(null)
   const lauad = ref([]);
@@ -202,7 +200,7 @@
   const valitudKell = ref(null);
 
   const valitudLaud = ref(null);
-  const lauaVärv = valitudLaud.value ? "#534AB7" : "#aaa"; // Näiteks: valitud laud on lilla, ülejäänud hallid
+  
 
   const minDate = new Date(); //tänane kuupäev
   onMounted(() => {
@@ -216,18 +214,58 @@
     });
   })
 
-  function vajutaLauale (lauaNr) {
-    if (valitudLaud.value === lauaNr) {
+  function lauaVärv(lauaNr) {
+    if (!valitudKuupäev.value || !valitudKell.value) {
+      return "#f5f5f4"; //hall, kui kuupäev või kellaaeg pole valitud
+    }
+
+    if (!vabadLauad.value.includes(lauaNr)) {
+      return "#ff9b9b" ; //punane, kui laud on hõivatud
+    } else if (valitudLaud.value === lauaNr) {
+      return "#B8E3BB"; //roheline, kui laud on valitud
+    } else {
+      return "#f5f5f4"; //hall, kui laud on vaba, aga mitte valitud
+      
+    }
+    
+  }
+
+  function vajutaLauale(lauaNr) {
+    if (!vabadLauad.value.includes(lauaNr) || valitudLaud.value === lauaNr ) {
       valitudLaud.value = null;
     } else {
       valitudLaud.value = lauaNr; 
     }
-    alert(`Vajutasid lauale ${valitudLaud.value}`);
   }
 
- const vabadLauad = computed(() => {
+  function teeReserveering(lauaNr, kuupäev, kell){
+    const reserveering = new Date(kuupäev);
+    reserveering.setHours(kell.getHours());
+    reserveering.setMinutes(kell.getMinutes());
+    
+    const kohalikAeg = new Date(reserveering.getTime() - reserveering.getTimezoneOffset() * 60000).toISOString().slice(0, 16);
+
+    fetch("/api/reserveeringud", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        laud: Number(lauaNr),
+        reserveering: kohalikAeg,
+      }),
+    }).then((response) => { if (!response.ok) {
+        throw new Error("Response was not ok");
+    }  return response.json();
+    }).then((data) => {
+      lauad.value = data; // uuendame lauad uue info põhjal
+      valitudLaud.value = null; // tühjendame valiku pärast reserveeringu tegemist
+    })
+  }
+
+ const vabadLauad = computed(() => { 
   if (!valitudKuupäev.value || !valitudKell.value) {
-    return "Palun valige kuupäev ja kellaaeg.";
+    return [];
   }
   const soovitudAeg = new Date(valitudKuupäev.value);
   soovitudAeg.setHours(valitudKell.value.getHours());
@@ -239,12 +277,12 @@
     }
     return laud.reserveeringud.every(reserveering => {
       const reserveeringAeg = new Date(reserveering);
-      return reserveeringAeg.getTime() < soovitudAeg.getTime() - 2 * 60 * 60 * 1000 ||
+      return reserveeringAeg.getTime() <= soovitudAeg.getTime() - 2 * 60 * 60 * 1000 ||
              reserveeringAeg.getTime() > soovitudAeg.getTime() + 2 * 60 * 60 * 1000;
     });
   });
 
-  return vabad.length > 0 ? vabad.map(laud => laud.lauaNr).join(", ") : "Puuduvad vabad lauad.";
+  return vabad.length > 0 ? vabad.map(laud => Number(laud.lauaNr)) : [];
 });
 
 </script>

@@ -3,17 +3,17 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Laud {
-    private String lauaNr;
+    private int lauaNr;
     private int kohtadeArv;
     private ArrayList<LocalDateTime> reserveeringud;
 
-    public Laud(String lauaNr, int kohtadeArv, ArrayList<LocalDateTime> reserveeringud) {
+    public Laud(int lauaNr, int kohtadeArv, ArrayList<LocalDateTime> reserveeringud) {
         this.lauaNr = lauaNr;
         this.kohtadeArv = kohtadeArv;
         this.reserveeringud = new ArrayList<>(reserveeringud);
     }
 
-    public String getLauaNr() {
+    public int getLauaNr() {
         return lauaNr;
     }
 

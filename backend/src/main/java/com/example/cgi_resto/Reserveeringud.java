@@ -1,28 +1,42 @@
 package com.example.cgi_resto;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 import java.util.Arrays;
 import java.util.List;
 
 public class Reserveeringud {
+
+
+    // et uued reserveeringud ei läheks kaduma, hoiame neid mälus
+    private final List<Laud> lauad = initDemoReserveeringud();
     
     public List<Laud> getReserveeringud(){
-        return initDemoReserveeringud();
+        return lauad; 
+    }
+
+    public void lisaReserveering(int lauaNr, LocalDateTime aeg) {
+        for (Laud laud : lauad) {
+            if (laud.getLauaNr() == lauaNr) {
+                laud.lisaReserveering(aeg);
+                break;
+            }
+        }
     }
 
     public List<Laud> initDemoReserveeringud() {
         
-        Laud laud1 = new Laud("1", 2, new ArrayList<>());
-        Laud laud2 = new Laud("2", 2, new ArrayList<>());
-        Laud laud3 = new Laud("3", 2, new ArrayList<>());
-        Laud laud4 = new Laud("4", 4, new ArrayList<>());
-        Laud laud5 = new Laud("5", 4, new ArrayList<>());
-        Laud laud6 = new Laud("6", 4, new ArrayList<>());
-        Laud laud7 = new Laud("7", 6, new ArrayList<>());
-        Laud laud8 = new Laud("8", 6, new ArrayList<>());
-        Laud laud9 = new Laud("9", 6, new ArrayList<>());
-        Laud laud10 = new Laud("10", 8, new ArrayList<>());
+        Laud laud1 = new Laud(1, 2, new ArrayList<>());
+        Laud laud2 = new Laud(2, 2, new ArrayList<>());
+        Laud laud3 = new Laud(3, 2, new ArrayList<>());
+        Laud laud4 = new Laud(4, 4, new ArrayList<>());
+        Laud laud5 = new Laud(5, 4, new ArrayList<>());
+        Laud laud6 = new Laud(6, 4, new ArrayList<>());
+        Laud laud7 = new Laud(7, 6, new ArrayList<>());
+        Laud laud8 = new Laud(8, 6, new ArrayList<>());
+        Laud laud9 = new Laud(9, 6, new ArrayList<>());
+        Laud laud10 = new Laud(10, 8, new ArrayList<>());
 
 
         // Laudade reserveeringud genereeritud GPT-4.1 abil. 
