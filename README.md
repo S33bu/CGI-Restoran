@@ -1,5 +1,12 @@
 # CGI-Restoran
 
+# Projekti kirjeldus 
+
+Tegemist on restorani laua broneerimise ja soovitamise veebirakendusega. 
+<br>
+Lahendus on loodud Vue.js front-end ning Spring Boot back-end raamistiku abil.  
+
+
 # Kuidas käivitada?
 
 ## Navigeeri frontend kausta
