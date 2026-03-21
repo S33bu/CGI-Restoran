@@ -79,7 +79,7 @@
       </defs>
  
       <!-- Ruumi outline -->
-      <rect x="30" y="60" width="620" height="730" rx="6" fill="#fafaf9" stroke="#aaa" stroke-width="2.5"/>
+      <rect x="30" y="60" width="620" height="730" rx="6" fill="rgba(15, 25, 20, 0.85)" stroke="#3a4a3a" stroke-width="2.5"/>
  
       <!-- Aknad üleval -->
       <rect x="30" y="60" width="620" height="8" fill="#888" opacity="0.25" rx="3"/>
@@ -97,140 +97,140 @@
 
       <!-- T1:  -->
       <g @click="vajutaLauale(1)" style="cursor: pointer;">
-        <rect x="100" y="78" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#888" stroke-width="0.8"/>
+        <rect x="100" y="78" width="28" height="12" rx="4"fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
         <rect x="75" y="90" width="80" height="55" rx="8" :fill="lauaVärv(1)" :stroke="soovitatudLaud(1)" stroke-width="1.5"/>
-        <text font-family="sans-serif" font-size="14" font-weight="500" x="115" y="120" text-anchor="middle" dominant-baseline="central" fill="#1a1a1a">T1</text>
-        <text font-family="sans-serif" font-size="12" x="115" y="134" text-anchor="middle" fill="#666">2 kohta</text>
+        <text font-family="sans-serif" font-size="14" font-weight="500" x="115" y="120" text-anchor="middle" dominant-baseline="central" fill="#c8bfa8">T1</text>
+        <text font-family="sans-serif" font-size="12" x="115" y="134" text-anchor="middle" fill="#5a7a5a">2 kohta</text>
         <!-- bottom chairs -->
-        <rect x="100"  y="144" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#888" stroke-width="0.8"/>
+        <rect x="100"  y="144" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
       </g>
 
 
       <!-- T2:  -->
        <g @click="vajutaLauale(2)" style="cursor: pointer;"> 
-      <rect x="242" y="78" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#888" stroke-width="0.8"/>
+      <rect x="242" y="78" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
       <rect x="215" y="90" width="80" height="55" rx="8" :fill="lauaVärv(2)" :stroke="soovitatudLaud(2)" stroke-width="1.5"/>
-      <text font-family="sans-serif" font-size="14" font-weight="500" x="255" y="120" text-anchor="middle" dominant-baseline="central" fill="#1a1a1a">T2</text>
-      <text font-family="sans-serif" font-size="12" x="255" y="134" text-anchor="middle" fill="#666">2 kohta</text>
-      <rect x="242" y="144" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#888" stroke-width="0.8"/>
+      <text font-family="sans-serif" font-size="14" font-weight="500" x="255" y="120" text-anchor="middle" dominant-baseline="central" fill="#c8bfa8">T2</text>
+      <text font-family="sans-serif" font-size="12" x="255" y="134" text-anchor="middle" fill="#5a7a5a">2 kohta</text>
+      <rect x="242" y="144" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
         </g>
 
 
       <!-- T3: -->
       <g @click="vajutaLauale(3)" style="cursor: pointer;"> 
-        <rect x="382" y="78" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#888" stroke-width="0.8"/>
+        <rect x="382" y="78" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
         <rect x="355" y="90" width="80" height="55" rx="8" :fill="lauaVärv(3)" :stroke="soovitatudLaud(3)" stroke-width="1.5"/>
-        <text font-family="sans-serif" font-size="14" font-weight="500" x="395" y="120" text-anchor="middle" dominant-baseline="central" fill="#1a1a1a">T3</text>
-        <text font-family="sans-serif" font-size="12" x="395" y="134" text-anchor="middle" fill="#666">2 kohta</text>
-        <rect x="382" y="144" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#888" stroke-width="0.8"/>
+        <text font-family="sans-serif" font-size="14" font-weight="500" x="395" y="120" text-anchor="middle" dominant-baseline="central" fill="#c8bfa8">T3</text>
+        <text font-family="sans-serif" font-size="12" x="395" y="134" text-anchor="middle" fill="#5a7a5a">2 kohta</text>
+        <rect x="382" y="144" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
       </g>
 
 
       <!-- ===== 4-SEAT TABLES ===== -->
       <g @click="vajutaLauale(4)" style="cursor: pointer;"> 
-      <rect x="73"  y="230" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
-      <rect x="109" y="230" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
+      <rect x="73"  y="230" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
+      <rect x="109" y="230" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
       <rect x="60" y="242" width="90" height="70" rx="8" :fill="lauaVärv(4)" :stroke="soovitatudLaud(4)" stroke-width="1.5"/>
-      <text font-family="sans-serif" font-size="14" font-weight="500" x="105" y="274" text-anchor="middle" dominant-baseline="central" fill="#1a1a1a">T4</text>
-      <text font-family="sans-serif" font-size="12" x="105" y="288" text-anchor="middle" fill="#666">4 kohta</text>
-      <rect x="73"  y="311" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
-      <rect x="109" y="311" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
+      <text font-family="sans-serif" font-size="14" font-weight="500" x="105" y="274" text-anchor="middle" dominant-baseline="central" fill="#c8bfa8">T4</text>
+      <text font-family="sans-serif" font-size="12" x="105" y="288" text-anchor="middle" fill="#5a7a5a">4 kohta</text>
+      <rect x="73"  y="311" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
+      <rect x="109" y="311" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
       </g>
 
 
       <!-- T5: -->
       <g @click="vajutaLauale(5)" style="cursor: pointer;"> 
-      <rect x="228" y="230" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
-      <rect x="264" y="230" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
+      <rect x="228" y="230" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
+      <rect x="264" y="230" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
       <rect x="215" y="242" width="90" height="70" rx="8" :fill="lauaVärv(5)" :stroke="soovitatudLaud(5)" stroke-width="1.5"/>
-      <text font-family="sans-serif" font-size="14" font-weight="500" x="260" y="274" text-anchor="middle" dominant-baseline="central" fill="#1a1a1a">T5</text>
-      <text font-family="sans-serif" font-size="12" x="260" y="288" text-anchor="middle" fill="#666">4 kohta</text>
-      <rect x="228" y="311" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
-      <rect x="264" y="311" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
+      <text font-family="sans-serif" font-size="14" font-weight="500" x="260" y="274" text-anchor="middle" dominant-baseline="central" fill="#c8bfa8">T5</text>
+      <text font-family="sans-serif" font-size="12" x="260" y="288" text-anchor="middle" fill="#5a7a5a">4 kohta</text>
+      <rect x="228" y="311" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
+      <rect x="264" y="311" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
       </g>
 
       <!-- T6: -->
       <g @click="vajutaLauale(6)" style="cursor: pointer;"> 
-      <rect x="408" y="230" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
-      <rect x="444" y="230" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
+      <rect x="408" y="230" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
+      <rect x="444" y="230" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
       <rect x="395" y="242" width="90" height="70" rx="8" :fill="lauaVärv(6)" :stroke="soovitatudLaud(6)" stroke-width="1.5"/>
-      <text font-family="sans-serif" font-size="14" font-weight="500" x="440" y="274" text-anchor="middle" dominant-baseline="central" fill="#1a1a1a">T6</text>
-      <text font-family="sans-serif" font-size="12" x="440" y="288" text-anchor="middle" fill="#666">4 kohta</text>
-      <rect x="408" y="311" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
-      <rect x="444" y="311" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
+      <text font-family="sans-serif" font-size="14" font-weight="500" x="440" y="274" text-anchor="middle" dominant-baseline="central" fill="#c8bfa8">T6</text>
+      <text font-family="sans-serif" font-size="12" x="440" y="288" text-anchor="middle" fill="#5a7a5a">4 kohta</text>
+      <rect x="408" y="311" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
+      <rect x="444" y="311" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
       </g>
 
       <!-- ===== MÄNGUALA ===== -->
       <g>
-        <rect x="450" y="375" width="180" height="150" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
-        <text font-family="sans-serif" font-size="13" font-weight="500" x="540" y="400" text-anchor="middle" fill="#16a34a">Laste Mänguala</text>
+        <rect x="450" y="375" width="180" height="150" rx="8" fill="#3a5a3a" stroke="#86efac" stroke-width="1.5"/>
+        <text font-family="sans-serif" font-size="13" font-weight="500" x="540" y="400" text-anchor="middle" fill="#c8bfa8">Laste Mänguala</text>
       </g>
 
 
       <!-- ===== 6-SEAT TABLES ===== -->
       <!-- T7: -->
       <g @click="vajutaLauale(7)" style="cursor: pointer;"> 
-      <rect x="70"  y="408" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
-      <rect x="106" y="408" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
-      <rect x="142" y="408" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
+      <rect x="70"  y="408" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
+      <rect x="106" y="408" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
+      <rect x="142" y="408" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
       <rect x="55" y="420" width="130" height="75" rx="8" :fill="lauaVärv(7)" :stroke="soovitatudLaud(7)" stroke-width="1.5"/>
-      <text font-family="sans-serif" font-size="14" font-weight="500" x="120" y="454" text-anchor="middle" dominant-baseline="central" fill="#1a1a1a">T7</text>
-      <text font-family="sans-serif" font-size="12" x="120" y="468" text-anchor="middle" fill="#666">6 kohta</text>
-      <rect x="70"  y="494" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
-      <rect x="106" y="494" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
-      <rect x="142" y="494" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
+      <text font-family="sans-serif" font-size="14" font-weight="500" x="120" y="454" text-anchor="middle" dominant-baseline="central" fill="#c8bfa8">T7</text>
+      <text font-family="sans-serif" font-size="12" x="120" y="468" text-anchor="middle" fill="#5a7a5a">6 kohta</text>
+      <rect x="70"  y="494" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
+      <rect x="106" y="494" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
+      <rect x="142" y="494" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
       </g>
 
 
       <!-- T8: -->
        <g @click="vajutaLauale(8)" style="cursor: pointer;"> 
-      <rect x="260" y="408" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
-      <rect x="296" y="408" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
-      <rect x="332" y="408" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
+      <rect x="260" y="408" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
+      <rect x="296" y="408" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
+      <rect x="332" y="408" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
       <rect x="245" y="420" width="130" height="75" rx="8" :fill="lauaVärv(8)" :stroke="soovitatudLaud(8)" stroke-width="1.5"/>
-      <text font-family="sans-serif" font-size="14" font-weight="500" x="310" y="454" text-anchor="middle" dominant-baseline="central" fill="#1a1a1a">T8</text>
-      <text font-family="sans-serif" font-size="12" x="310" y="468" text-anchor="middle" fill="#666">6 kohta</text>
-      <rect x="260" y="494" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
-      <rect x="296" y="494" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
-      <rect x="332" y="494" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
+      <text font-family="sans-serif" font-size="14" font-weight="500" x="310" y="454" text-anchor="middle" dominant-baseline="central" fill="#c8bfa8">T8</text>
+      <text font-family="sans-serif" font-size="12" x="310" y="468" text-anchor="middle" fill="#5a7a5a">6 kohta</text>
+      <rect x="260" y="494" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
+      <rect x="296" y="494" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
+      <rect x="332" y="494" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
         </g>
 
 
       <!-- T9:  -->
        <g @click="vajutaLauale(9)" style="cursor: pointer;"> 
-      <rect x="465" y="588" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
-      <rect x="501" y="588" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
-      <rect x="537" y="588" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
+      <rect x="465" y="588" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
+      <rect x="501" y="588" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
+      <rect x="537" y="588" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
       <rect x="450" y="600" width="130" height="75" rx="8" :fill="lauaVärv(9)" :stroke="soovitatudLaud(9)" stroke-width="1.5"/>
-      <text font-family="sans-serif" font-size="14" font-weight="500" x="515" y="634" text-anchor="middle" dominant-baseline="central" fill="#1a1a1a">T9</text>
-      <text font-family="sans-serif" font-size="12" x="515" y="648" text-anchor="middle" fill="#666">6 kohta</text>
-      <rect x="465" y="674" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
-      <rect x="501" y="674" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
-      <rect x="537" y="674" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
+      <text font-family="sans-serif" font-size="14" font-weight="500" x="515" y="634" text-anchor="middle" dominant-baseline="central" fill="#c8bfa8">T9</text>
+      <text font-family="sans-serif" font-size="12" x="515" y="648" text-anchor="middle" fill="#5a7a5a">6 kohta</text>
+      <rect x="465" y="674" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
+      <rect x="501" y="674" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
+      <rect x="537" y="674" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
         </g>
 
       <!-- ===== 8-SEAT TABLE ===== -->
        <g @click="vajutaLauale(10)" style="cursor: pointer;"> 
-      <rect x="77"  y="600" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
-      <rect x="113" y="600" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
-      <rect x="149" y="600" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
-      <rect x="185" y="600" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
+      <rect x="77"  y="600" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
+      <rect x="113" y="600" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
+      <rect x="149" y="600" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
+      <rect x="185" y="600" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
       <rect x="55" y="612" width="180" height="80" rx="8" :fill="lauaVärv(10)" :stroke="soovitatudLaud(10)" stroke-width="1.5"/>
-      <text font-family="sans-serif" font-size="14" font-weight="500" x="145" y="648" text-anchor="middle" dominant-baseline="central" fill="#1a1a1a">T10</text>
-      <text font-family="sans-serif" font-size="12" x="145" y="662" text-anchor="middle" fill="#666">8 kohta</text>
-      <rect x="77"  y="691" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
-      <rect x="113" y="691" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
-      <rect x="149" y="691" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
-      <rect x="185" y="691" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
+      <text font-family="sans-serif" font-size="14" font-weight="500" x="145" y="646" text-anchor="middle" dominant-baseline="central" fill="#c8bfa8">T10</text>
+      <text font-family="sans-serif" font-size="12" x="145" y="662" text-anchor="middle" fill="#5a7a5a">8 kohta</text>
+      <rect x="77"  y="691" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
+      <rect x="113" y="691" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
+      <rect x="149" y="691" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
+      <rect x="185" y="691" width="28" height="12" rx="4" fill="rgba(30, 45, 35, 0.8)" stroke="#3a5a3a" stroke-width="0.8"/>
       </g>
 
       <!-- ===== LEGEND ===== -->
-      <rect x="400" y="710" width="230" height="70" rx="8" fill="#f5f5f4" stroke="#ccc" stroke-width="0.8"/>
-      <text font-family="sans-serif" font-size="14" font-weight="500" x="515" y="727" text-anchor="middle" fill="#1a1a1a">Legend</text>
-      <rect x="416" y="736" width="26" height="14" rx="4" fill="#f5f5f4" stroke="#3B8BD4" stroke-width="1.5"/>
-      <text font-family="sans-serif" font-size="11" x="450" y="746" fill="#666">Soovitatud laud (eelistuste põhjal)</text>
-      <rect x="416" y="756" width="26" height="14" rx="4" fill="#ff9b9b" stroke="#aaa" stroke-width="1.5"/>
-      <text font-family="sans-serif" font-size="11" x="450" y="766" fill="#666">Hõivatud / Mittesobilik laud</text>
+      <rect x="400" y="710" width="230" height="70" rx="8" fill="rgba(40, 60, 45, 0.7)" stroke="#ccc" stroke-width="0.8"/>
+      <text font-family="sans-serif" font-size="14" font-weight="500" x="515" y="727" text-anchor="middle" fill="#c8bfa8">Legend</text>
+      <rect x="416" y="736" width="26" height="14" rx="4" fill="rgba(40, 60, 45, 0.7)" stroke="#3B8BD4" stroke-width="1.5"/>
+      <text font-family="sans-serif" font-size="11" x="450" y="746" fill="#5a7a5a">Soovitatud laud (eelistuste põhjal)</text>
+      <rect x="416" y="756" width="26" height="14" rx="4" fill="rgba(120, 40, 40, 0.7)" stroke="#aaa" stroke-width="1.5"/>
+      <text font-family="sans-serif" font-size="11" x="450" y="766" fill="#5a7a5a">Hõivatud / Mittesobilik laud</text>
     </svg>
 
 
@@ -274,15 +274,15 @@
 
   function lauaVärv(lauaNr) {
     if (!valitudKuupäev.value || !valitudKell.value) {
-      return "#f5f5f4"; //hall, kui kuupäev või kellaaeg pole valitud
+      return "rgba(40, 60, 45, 0.7)"; // tume roheline, vaikimisi
     }
 
     if (!vabadLauad.value.includes(lauaNr)) {
-      return "#ff9b9b" ; //punane, kui laud on hõivatud
+      return "rgba(120, 40, 40, 0.7)"; // tume punane, hõivatud
     } else if (valitudLaud.value === lauaNr) {
-      return "#B8E3BB"; //roheline, kui laud on valitud
+      return "rgba(40, 100, 60, 0.9)"; // tume roheline, valitud
     } else {
-      return "#f5f5f4"; //hall, kui laud on vaba, aga mitte valitud
+      return "rgba(40, 60, 45, 0.7)"; // tume hall-roheline, vaba
       
     }
     
