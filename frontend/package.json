@@ -9,7 +9,7 @@
     "frontend": "npm run vite",
     "backend": "cd ../backend && gradlew.bat bootRun",
     "vite": "vite",
-    "dev": "concurrently \"npm run frontend\" \"npm run backend\""
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\" "
   },
   "dependencies": {
     "@primeuix/themes": "^2.0.3",
