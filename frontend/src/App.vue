@@ -1,6 +1,8 @@
 <template>
   <div class="parent" >
-    <div class="div1"> Broneeri laud
+    <div class="div1"> 
+      <div style="font-family:Garamond; font-size:xx-large; font-style: italic; " >Restoran CGI</div>
+      <div>Broneeri laud</div>
       <div>Mitu inimest? (max 8)
         <InputNumber v-model="inimesteArv" showButtons buttonLayout="vertical" inputId="minmax" :min="1" :max="8" style="width: 3rem;" />
       </div>
@@ -9,9 +11,13 @@
           <DatePicker v-model="valitudKuupäev" showIcon iconDisplay="input" />
           <DatePicker v-model="valitudKell" showIcon iconDisplay="input" timeOnly/>
        </div>
-       <div>Soovitatud lauad: {{ filteredLauad }}</div>
+       <div> Soovitatud lauad: 
+        <span v-if="filteredLauad.length === 0">Kahjuks ei ole soovitud laudasid saadaval</span>
+        <span v-if="!valitudKell || !valitudKuupäev">Palun valige kuupäev ja kellaaeg</span>
+        <span v-else> {{ filteredLauad.join(", ") }}</span>
+       </div>
        <div>Eelistused (valikulised):
-    <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
+    <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem; margin-bottom: 0.5rem;">
         <Button 
             @click="filterValitud = filterValitud === 'Akna lähedal' ? null : 'Akna lähedal'"
             :outlined="filterValitud !== 'Akna lähedal'"
@@ -22,6 +28,11 @@
             :outlined="filterValitud !== 'Privaatne'"
             raised
         >Privaatne</Button>
+        <Button 
+            @click="filterValitud = filterValitud === 'Mänguala lähedal' ? null : 'Mänguala lähedal'"
+            :outlined="filterValitud !== 'Mänguala lähedal'"
+            raised
+        >Mänguala lähedal</Button>
     </div>
 </div>
        <Button @click="teeReserveering(valitudLaud, valitudKuupäev, valitudKell)" :disabled="!valitudLaud" raised>Broneeri Laud</Button>
@@ -47,7 +58,7 @@
       <rect x="220" y="56" width="90" height="10" rx="2" fill="#dbeafe" stroke="#3B8BD4" stroke-width="1"/>
       <rect x="360" y="56" width="90" height="10" rx="2" fill="#dbeafe" stroke="#3B8BD4" stroke-width="1"/>
       <rect x="500" y="56" width="90" height="10" rx="2" fill="#dbeafe" stroke="#3B8BD4" stroke-width="1"/>
-      <text font-family="sans-serif" font-size="12" x="340" y="54" text-anchor="middle" fill="#185FA5">Aknad</text>
+      <text font-family="sans-serif" font-size="12" x="335" y="54" text-anchor="middle" fill="#185FA5">Aknad</text>
  
       <!-- Uks all -->
       <rect x="295" y="782" width="90" height="8" rx="2" fill="#fff" stroke="#ccc" stroke-width="1"/>
@@ -126,6 +137,12 @@
       <text font-family="sans-serif" font-size="12" x="440" y="288" text-anchor="middle" fill="#666">4 kohta</text>
       <rect x="408" y="311" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
       <rect x="444" y="311" width="28" height="12" rx="4" fill="#f5f5f4" stroke="#aaa" stroke-width="0.8"/>
+      </g>
+
+      <!-- ===== MÄNGUALA ===== -->
+      <g>
+        <rect x="450" y="375" width="180" height="150" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+        <text font-family="sans-serif" font-size="13" font-weight="500" x="540" y="400" text-anchor="middle" fill="#16a34a">Laste Mänguala</text>
       </g>
 
 
@@ -266,7 +283,9 @@
     if (filterValitud.value == "Akna lähedal" && (lauaNr === 1 || lauaNr === 2 || lauaNr === 3) && onVaba) {
       return "#3B8BD4"; //sinine, kui laud on akna lähedal
     } else if (filterValitud.value == "Privaatne" && (lauaNr === 9 || lauaNr === 10) && onVaba) {
-      return "#534AB7"; //lilla, kui laud on 8-kohaline
+      return "#3B8BD4"; //lilla, kui laud on 8-kohaline
+    } else if (filterValitud.value == "Mänguala lähedal" && (lauaNr === 9 || lauaNr === 8 || lauaNr === 6) && onVaba) {
+      return "#3B8BD4"; //lilla, kui laud on 8-kohaline
     } else {
       return "#aaa"; //tavaline hall, kui laud ei vasta eelistustele
     }
