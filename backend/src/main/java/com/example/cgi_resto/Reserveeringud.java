@@ -19,7 +19,8 @@ public class Reserveeringud {
     public void lisaReserveering(int lauaNr, LocalDateTime aeg) {
         for (Laud laud : lauad) {
             if (laud.getLauaNr() == lauaNr) {
-                laud.lisaReserveering(aeg);
+                if (laud.onVaba(aeg)) // kontrollib, et broneering ei kattuks olemasolevate aegadega
+                    laud.lisaReserveering(aeg);
                 break;
             }
         }

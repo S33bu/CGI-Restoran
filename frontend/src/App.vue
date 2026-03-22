@@ -240,7 +240,7 @@
 </template>
 
 <script setup>
-  import { ref, onMounted, computed } from 'vue';
+  import { ref, onMounted, computed, watch} from 'vue';
   import DatePicker from 'primevue/datepicker'
   import InputNumber from 'primevue/inputnumber';
   import Button from 'primevue/button';
@@ -270,6 +270,36 @@
       console.error("Error fetching data:", error);
     });
   })
+
+  watch(valitudKuupäev, (uusKuupäev) => { // Pooleldi AI abil loodud funktsioon (enamasti probleemide lahendamine), mis vajadusel saadab päringu backendi, kus genereeritakse juhuslikud reserveeringud
+    if (!uusKuupäev) return;
+
+    const kuupäevString = new Date(uusKuupäev.getTime() - uusKuupäev.getTimezoneOffset() * 60000).toISOString().slice(0, 10); // et oleks meie ajavööndis
+
+    let onReserveeringuid = false;
+    for (const laud of lauad.value) {
+      for (const r of laud.reserveeringud) {
+        if (String(r).startsWith(kuupäevString)) {
+          onReserveeringuid = true;
+          break;
+        }
+      }
+    }
+
+    if (!onReserveeringuid) {
+      fetch(`/api/reserveeringud/genereeri?kuupaev=${kuupäevString}`, {
+        method: "POST",
+      })
+      .then (r => {
+          if (!r.ok) {
+              console.error("Genereerimine ebaõnnestus:", r.statusText);
+          }
+          return r.json();
+      }) 
+      .then (data => {
+        if (data) lauad.value = data; })
+    }
+  });
 
 
   function lauaVärv(lauaNr) {
