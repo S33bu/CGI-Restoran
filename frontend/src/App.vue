@@ -52,7 +52,7 @@
         <div style="font-size: 0.85rem; font-weight: 500; color: #e8e0d5; margin-bottom: 0.25rem;">Soovitatud lauad:</div>
         <div style="font-size: 1.25rem; color: #666;">
           <span v-if="!valitudKuupäev || !valitudKell" style="color: #5a6a5a;">Laudu ei saa soovitada, kui kuupäev või kellaaeg pole valitud</span>
-          <span v-else-if="filteredLauad.length === 0" style="color: #e57373;">Kahjuks ei ole sobivaid laudu saadaval</span>
+          <span v-else-if="filteredLauad.length === 0" style="color: #e57373;">Kahjuks ei ole sobivaid laudu saadaval, mis sobiksid teie seltskonna arvuga</span>
           <span v-else style="color: #2d6a4f; font-weight: 500;">{{ filteredLauad.join(", ") }}</span>
         </div>
       </div>
